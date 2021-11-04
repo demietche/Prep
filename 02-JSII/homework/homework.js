@@ -108,13 +108,18 @@ function breakStatement(numero) {
   // devolver: "Se interrumpió la ejecución"
   // Pista: usá el statement 'break'
   // Tu código:
-  var results = [];
+  var nuevoArr = [];
   for (var i = 0; i < 10; i++) {
-    if(i === numero) return 'Se interrumpió la ejecución';
-    numero = numero + 2;
-    results.push(numero);
+   numero = numero + 2;
+   if(numero === i) {
+     break;
+   }
+   nuevoArr.push(numero);
   }
-  return results;
+  if(i < 10) {
+    return 'Se interrumpió la ejecución'
+  }
+  return nuevoArr;
 }
 
 function continueStatement(numero) {
